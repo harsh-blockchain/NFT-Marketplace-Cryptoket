@@ -1,34 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+The CryptoKet NFT Marketplace
 
-## Getting Started
+Give ripo if you like it....:)
 
-First, run the development server:
+ipfs - locally used for image storage for nft
+smart contract - truffle 
+frontend - nextjs
+and other several react libraries....
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Screenshot (68)](https://user-images.githubusercontent.com/86045544/204544796-57672c14-b49e-4474-b035-e12bae599437.png)
+![Screenshot (71)](https://user-images.githubusercontent.com/86045544/204544739-4bac8d8f-98ec-4915-a8fb-d0061b1731a6.png)
+![Screenshot (70)](https://user-images.githubusercontent.com/86045544/204544733-8a8415f8-3204-4b68-8fde-2cf1822c2841.png)
+![Screenshot (72)](https://user-images.githubusercontent.com/86045544/204544749-9925b8f0-19ff-4153-bfad-03cca7749cfe.png)
+![Screenshot (73)](https://user-images.githubusercontent.com/86045544/204544761-61daa6d0-c8bd-4b1a-bdb5-00c93b8bc4b2.png)
+![Screenshot (74)](https://user-images.githubusercontent.com/86045544/204544772-cd5c27cd-a41a-46ef-a33a-e3bf1722a758.png)
+![Screenshot (75)](https://user-images.githubusercontent.com/86045544/204544775-043cd5f3-7435-4948-b8ae-1932e6327fba.png)
+![Screenshot (76)](https://user-images.githubusercontent.com/86045544/204544781-2a6eeabd-129f-441e-9764-a9618be578a1.png)
