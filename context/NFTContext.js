@@ -141,20 +141,93 @@ export const NFTProvider = ({ children }) => {
     }
   };
 
+  const fetchMyOrListedNfts = async (type) => {
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(
+        ContractAddress,
+        ContractABI,
+        signer
+      );
+
+      const data =
+        type === "fetchItemsListed"
+          ? await contract.fetchItemsListed()
+          : await contract.fetchMyNFTs();
+
+      const items = await Promise.all(
+        data.map(
+          async ({ tokenId, seller, owner, price: unformattedPrice }) => {
+            const tokenURI = await contract.tokenURI(tokenId);
+            const {
+              data: { image, name, description },
+            } = await axios.get(tokenURI);
+            const price = ethers.utils.formatUnits(
+              unformattedPrice.toString(),
+              "ether"
+            );
+
+            return {
+              price,
+              tokenId: tokenId.toNumber(),
+              seller,
+              owner,
+              image,
+              name,
+              description,
+              tokenURI,
+            };
+          }
+        )
+      );
+
+      return items;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     checkIfWalletIsConnected();
     createSale("test", 0.025);
   });
+
+  const buyNFT = async (nft) => {
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(
+        ContractAddress,
+        ContractABI,
+        signer
+      );
+
+      const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
+
+      const transaction = await contract.createMarketSale(nft.tokenId, {
+        value: price,
+      });
+      setIsLoadingNFT(true);
+      await transaction.wait();
+      setIsLoadingNFT(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <NFTContext.Provider
       value={{
         nftCurrency,
         connectWallet,
+        createSale,
         account,
         uploadToIPFS,
         createNFT,
         fetchNFT,
+        fetchMyOrListedNfts,
+        buyNFT,
       }}
     >
       {children}

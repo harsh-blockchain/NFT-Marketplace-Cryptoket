@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import NftCards from "../components/NftCards";
 import { NFTContext } from "../context/NFTContext";
+import Head from "next/head";
 
 const Home = () => {
   const { fetchNFT } = useContext(NFTContext);
@@ -61,6 +62,11 @@ const Home = () => {
 
   return (
     <div className="flex justify-center sm:px-4 p-12">
+      <Head>
+        <title>NFT Marketplace</title>
+        <link rel="shortcut icon" href="../components/assets/logo02.png" />
+      </Head>
+
       <div className="w-full minmd:w-4/5">
         <Banner
           parentStyles="justify-start mb-6 h-72 sm:h-60 p-12 sx:p-4 xs:h-44 rounded-3xl"
